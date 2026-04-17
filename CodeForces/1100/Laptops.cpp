@@ -5,45 +5,36 @@ int main(){
     int n;
     cin >> n;
 
-    int price[n], qulity[n];
+    int a[n], b[n];
 
     for(int i=0; i<n; i++)
     {
-        cin >> price[i] >> qulity[i];
+        cin >> a[i] >> b[i]; // price --> qulity
     }
 
-    //bubble sort
-
-    // for(int i=0; i<n-1; i++) // Time limit exceeded :<
-    // { 
-    //     for(int j=0; j<n-i-1; j++)
-    //     {
-    //         if(price[j] > price[j+1])
-    //         {
-    //             int temp = price[j];
-    //             price[j] = price[j+1];
-    //             price[j+1] = temp;
-
-    //             temp = qulity[j];
-    //             qulity[j] = qulity[j+1];
-    //             qulity[j+1] = temp;
-    //         }
-    //     }
-    // }
-
+    for(int i=0; i<n; i++)
+    {
+        for(int j=i+1; j<n; j++)
+        {
+            if(a[i] > a[j])
+            {
+                swap(a[i], a[j]);
+                swap(b[i], b[j]);
+            }
+        }
+    }
     
 
     for(int i=0; i<n-1; i++)
     {
-        if(qulity[i] > qulity[i+1])
+        if(a[i] < a[i+1] && b[i] > b[i+1] )
         {
-            cout << "Happy Alex" << endl;
+            cout << "Happy Alex";
             return 0;
         }
     }
-
-
-    cout << "Poor Alex" << endl;
+    
+    cout << "Poor Alex";
 
     return 0;
 }
