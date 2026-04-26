@@ -7,28 +7,38 @@ int main()
     string s;
     cin >> s;
 
-    int cnt = 0;
 
-    for(int i=0; i<(int)s.length()-1; i++)
+    for(int i=0; s[i] !='\0'; i++)
     {
-        for(int j=i+1; j<(int)s.length(); j++)
+        for(int j=i+1; s[j] !='\0';)
         {
-            if(s[i]!=s[j])
-            {
-                cnt++;
+            if(s[i] == s[j]){
+                for(int k=j; s[k] != '\0'; k++){
+                    s[k] = s[k+1];
+                }
+            }
+            else{
+                j++;
             }
         }
+        
     }
 
-    if(cnt % 2 == 0)
+
+    int cnt = 0;
+    for(int i=0; s[i] != '\0'; i++)
+    {
+        cnt++;
+    }
+ 
+    if(cnt%2 == 0)
     {
         cout << "CHAT WITH HER!";
     }
-    else{
+    else
+    {
         cout << "IGNORE HIM!";
     }
-
-
 
     return 0;
 }
