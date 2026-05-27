@@ -2,13 +2,10 @@
 using namespace std;
 
 int main(){
-    
-    int x;
-    cin >> x;
-
-    int result = (x+4)/5;
+    int k,l,m,n,d;
+    cin >> k >> l >> m >> n >> d;
     
 
-    cout << result;
+
     return 0;
 }

@@ -3,12 +3,6 @@ using namespace std;
 
 int main(){
     
-    int x;
-    cin >> x;
 
-    int result = (x+4)/5;
-    
-
-    cout << result;
     return 0;
 }
