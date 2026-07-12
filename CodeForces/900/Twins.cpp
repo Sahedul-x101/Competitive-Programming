@@ -4,18 +4,29 @@ using namespace std;
 int main(){
     int n;
     cin >> n;
-    int a[n];
-    int sum = 0;
+    
+    vector<int> a(n);
+    int total = 0;
+
     for(int i=0; i<n; i++){
         cin >> a[i];
-        sum += a[i];
+        total += a[i];
     }
 
-    sort(a,a+n);
+    sort(a.rbegin(), a.rend());
+
+    int mySum = 0;
+    int cnt = 0;
 
     for(int i=0; i<n; i++){
-        
+        mySum += a[i];
+        cnt++;
+
+        if(mySum > total - mySum){
+            break;
+        }
     }
 
+    cout << cnt << endl;
     return 0;
 }
